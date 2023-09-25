@@ -404,3 +404,13 @@ graph.on('edge:transition:finish', (args: Animation.CallbackArgs) => {})
 graph.on('view:mounted', ({ view }) => {})
 graph.on('view:unmounted', ({ view }) => {})
 ```
+
+大家还有经常需要在调用 `fromJSON` 或者 `resetCells` 后监听画布完成渲染事件，这时候可以使用 `render:done` 事件来监听 (2.15.1 版本新增)。
+
+```typescript
+graph.on('render:done', () => {
+  // pass
+})
+
+graph.fromJSON([...])
+```
